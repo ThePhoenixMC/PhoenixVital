@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PhoenixAPI/Phoenix-API.iml" filepath="$PROJECT_DIR$/PhoenixAPI/Phoenix-API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhoenixVital.iml" filepath="$PROJECT_DIR$/PhoenixVital.iml" />
+    </modules>
+  </component>
+</project>
