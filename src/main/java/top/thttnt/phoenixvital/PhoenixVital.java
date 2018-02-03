@@ -9,7 +9,7 @@ import top.thttnt.phoenixvital.configuration.PluginConfig;
 
 import java.io.IOException;
 
-@PhoenixModule(modid = "phoenixbital", name = "phoenixVital", version = "beta")
+@PhoenixModule(modid = "phoenixvital", name = "phoenixVital", version = "beta")
 public class PhoenixVital extends Module{
 
     public static PhoenixVital self;
@@ -34,7 +34,13 @@ public class PhoenixVital extends Module{
     }
 
     public void onDisable() {
-        logger.info("PhoenixVital is disabled");
+        try {
+            pluginConfig.save();
+            logger.info("PhoenixVital is disabled");
+        } catch (IOException e) {
+            logger.warn("PhoenixVital has some problems when saving the data");
+            e.printStackTrace();
+        }
     }
 
     public PluginConfig getPluginConfig() {

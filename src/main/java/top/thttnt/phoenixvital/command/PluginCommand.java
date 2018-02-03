@@ -7,6 +7,7 @@ public class PluginCommand {
 
     public static void registerCommand(){
         Phoenix.getCommandManager().registerCommand(PhoenixVital.self,new CommandSetHome());
+        Phoenix.getCommandManager().registerCommand(PhoenixVital.self,new CommandHome());
     }
 
 }

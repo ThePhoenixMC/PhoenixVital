@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PhoenixVital">
+    <output-path>$PROJECT_DIR$/out/artifacts/PhoenixVital</output-path>
+    <root id="archive" name="PhoenixVital.jar">
+      <element id="module-output" name="PhoenixVital" />
+    </root>
+  </artifact>
+</component>

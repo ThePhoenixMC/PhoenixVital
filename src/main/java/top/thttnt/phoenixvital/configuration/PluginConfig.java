@@ -13,4 +13,8 @@ public class PluginConfig {
     public HomeConfig getHomeConfig() {
         return homeConfig;
     }
+
+    public void save() throws IOException {
+        homeConfig.save();
+    }
 }
