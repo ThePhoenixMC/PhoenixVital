@@ -27,11 +27,12 @@ public class CommandHome implements Command{
         return true;
     }
 
-    @CommandRouter(args = "",permission = "phoenixvital.home")
-    public boolean teleportWithoutName(CommandSender sender, CommandContent content){
+
+    @Override
+    public CommandResult onRoot(CommandSender sender, CommandContent args) {
         if (!(sender instanceof Player)){
             sender.sendMessage("§4only player can use this command");
-            return true;
+            return CommandResult.success();
         }
         Player player = (Player)sender;
         Location location = PhoenixVital.self.getPluginConfig().getHomeConfig().getHome(player.getName(),"home");
@@ -40,11 +41,16 @@ public class CommandHome implements Command{
         }else{
             player.teleport(location);
         }
-        return true;
+        return CommandResult.success();
     }
 
     @Override
-    public boolean onMissHandled(CommandSender sender, String label, String[] args) {
-        return false;
+    public CommandResult onMissHandled(CommandSender sender, CommandContent args) {
+        return null;
+    }
+
+    @Override
+    public CommandResult onInsufficientPermission(CommandSender sender, CommandContent args) {
+        return null;
     }
 }

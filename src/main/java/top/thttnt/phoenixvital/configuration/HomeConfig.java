@@ -67,7 +67,7 @@ public class HomeConfig {
     }
 
     public void save() throws IOException {
-        JsonConfiguration config = (JsonConfiguration) JsonConfiguration.empty();
+        JsonConfiguration config = JsonConfiguration.empty();
         homes.keySet().forEach(playerName -> {
             MemoryConfiguration section = MemoryConfiguration.empty();
             homes.get(playerName).keySet().forEach(homeName -> {

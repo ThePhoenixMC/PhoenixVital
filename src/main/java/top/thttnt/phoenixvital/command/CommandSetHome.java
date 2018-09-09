@@ -24,11 +24,11 @@ public class CommandSetHome implements Command {
         return true;
     }
 
-    @CommandRouter(permission = "phoenixvital.sethome")
-    public boolean setHomeWithoutName(CommandSender sender, CommandContent content){
+    @Override
+    public CommandResult onRoot(CommandSender sender, CommandContent args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("§4only player can use this command");
-            return true;
+            return CommandResult.success();
         }
         Player player = (Player)sender;
         boolean result = PhoenixVital.self.getPluginConfig().getHomeConfig().setHome(player.getName(),"home",player.getLocation());
@@ -37,10 +37,16 @@ public class CommandSetHome implements Command {
         }else{
             sender.sendMessage("§2home is already exist");
         }
-        return true;
+        return CommandResult.success();
     }
 
-    public boolean onMissHandled(CommandSender sender, String label, String[] args) {
-        return false;
+    @Override
+    public CommandResult onMissHandled(CommandSender sender, CommandContent args) {
+        return null;
+    }
+
+    @Override
+    public CommandResult onInsufficientPermission(CommandSender sender, CommandContent args) {
+        return null;
     }
 }
